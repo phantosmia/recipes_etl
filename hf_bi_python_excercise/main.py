@@ -29,7 +29,7 @@ def read_recipes(filename):
 
 def generate_misspellings():
     return {
-        "chillies": ["chillies", "chilles", "chilies", "chiles", "chili", "chilli", "chilie", "chille"]
+        "chillies": ["chillies", "chilles", "chilies", "chiles", "chili", "chilli", "chilie", "chille", "chille", "chile"]
     }
 
 def contains_chillies(ingredients, misspellings):

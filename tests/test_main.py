@@ -37,7 +37,7 @@ def recipes():
 
 def test_generate_misspellings():
     misspellings = generate_misspellings()
-    expected = ["chillies", "chilles", "chilies", "chiles", "chili", "chilli", "chilie", "chille"]
+    expected = ["chillies", "chilles", "chilies", "chiles", "chili", "chilli", "chilie", "chille", "chille", "chile"]
     assert misspellings["chillies"] == expected
 
 def test_parse_time():
