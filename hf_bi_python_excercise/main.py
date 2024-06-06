@@ -104,7 +104,9 @@ def save_difficulty_aggregates(chilies_recipes, results_filename='Results.csv'):
 
     results_str = results.apply(lambda x: f"{x['Difficulty']}|AverageTotalTime|{x['AverageTotalTime']}", axis=1)
 
-    results_str.to_csv(results_filename, sep='|', index=False, header=False)
+    with open(results_filename, 'w') as f:
+        for line in results_str:
+            f.write(f"{line}\n")
 
 
 def process_recipes(json_filename):
