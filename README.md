@@ -5,6 +5,7 @@ This project provides a tool to process recipes data, specifically focusing on e
 ## Project Structure
 
 The project follows the following directory structure:
+```bash
 
 ├── bi_recipes.json
 ├── Chilies.csv
@@ -20,6 +21,8 @@ The project follows the following directory structure:
 ├── settings.py
 └── tests
     └── test_main.py
+```
+
 ## Requirements
 
 - Python 3.12
