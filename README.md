@@ -32,14 +32,15 @@ The project follows the following directory structure:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/recipes_etl.git
-cd hf_bi_python_excercise
+git clone https://github.com/phantosmia/recipes_etl.git
+cd recipes_etl
 ```
 
-### 2. Create the virtual environment
+### 2. Create the virtual environment and activate it
 
 ```bash
 python -m venv venv
+source ./venv/bin/activate 
 ```
 ### 3. Install the dependencies in the requirements.txt file
 
