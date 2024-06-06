@@ -47,10 +47,10 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-### 4. Run the project and see the files generated in the recipes-etl directory
+### 4. Run the project and see the files generated in the root directory
 
 ```bash
-python /hf_bi_python_excercise/main.py
+python ./hf_bi_python_excercise/main.py
 ```
 
 ### 5. Run the tests by executing this command in the root directory
