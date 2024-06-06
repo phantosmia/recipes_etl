@@ -33,11 +33,11 @@ def generate_misspellings():
     }
 
 def contains_chillies(ingredients, misspellings):
+    misspellings_set = set(misspellings)
     for ingredient in ingredients:
-        words = ingredient.lower().split()
-        for misspelling in misspellings:
-            if misspelling in words:
-                return True
+        words = set(ingredient.lower().split())
+        if misspellings_set.intersection(words):
+            return True
     return False
 
 def filter_chillies_recipes(recipes, misspellings):
