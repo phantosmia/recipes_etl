@@ -80,7 +80,7 @@ def determine_difficulty(total_time):
         return "Hard"
     elif 30 <= total_time <= 60:
         return "Medium"
-    elif total_time < 30:
+    elif total_time < 30 and total_time != 0:
         return "Easy"
     return "Unknown"
 
@@ -91,6 +91,8 @@ def save_chilies_recipes(chilies_recipes, filename='Chilies.csv'):
 def save_difficulty_aggregates(chilies_recipes, results_filename='Results.csv'):
     
     chilies_df = pd.DataFrame(chilies_recipes)
+
+    chilies_df = chilies_df[chilies_df['difficulty'] != 'Unknown']
 
     chilies_df['prepTime'] = pd.to_numeric(chilies_df['prepTime'], errors='coerce')
     chilies_df['cookTime'] = pd.to_numeric(chilies_df['cookTime'], errors='coerce')
