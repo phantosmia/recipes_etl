@@ -1,0 +1,1 @@
+URL_RECIPES = "https://bnlf-tests.s3.eu-central-1.amazonaws.com/recipes.json"
