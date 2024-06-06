@@ -89,16 +89,23 @@ def save_chilies_recipes(chilies_recipes, filename='Chilies.csv'):
     chilies_df.to_csv(filename, sep="|", index=False)
 
 def save_difficulty_aggregates(chilies_recipes, results_filename='Results.csv'):
+    
     chilies_df = pd.DataFrame(chilies_recipes)
 
     chilies_df['prepTime'] = pd.to_numeric(chilies_df['prepTime'], errors='coerce')
     chilies_df['cookTime'] = pd.to_numeric(chilies_df['cookTime'], errors='coerce')
 
     difficulty_agg = chilies_df.groupby('difficulty').agg({'prepTime': 'mean', 'cookTime': 'mean'})
+
     difficulty_agg['AverageTotalTime'] = difficulty_agg['prepTime'] + difficulty_agg['cookTime']
 
-    results_df = difficulty_agg[['AverageTotalTime']].reset_index()
-    results_df.to_csv(results_filename, sep='|', index=False, header=False)
+    results = difficulty_agg.reset_index()[['difficulty', 'AverageTotalTime']]
+    results.columns = ['Difficulty', 'AverageTotalTime']
+
+    results_str = results.apply(lambda x: f"{x['Difficulty']}|AverageTotalTime|{x['AverageTotalTime']}", axis=1)
+
+    results_str.to_csv(results_filename, sep='|', index=False, header=False)
+
 
 def process_recipes(json_filename):
     recipes = read_recipes(json_filename)
